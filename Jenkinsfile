@@ -4,7 +4,7 @@ pipeline{
    
            stage('Build'){
                steps{
-                      git url: 'https://github.com/KRDevops/PipelineDemo.git'
+                      git url: 'https://github.com/KRDevops/hello-world-war.git'
              }
         }
        
@@ -22,9 +22,8 @@ pipeline{
         }
             stage('deploy_container'){
             steps{
-       deploy adapters: [tomcat9(credentialsId: 'c9a8be14-f268-410b-a60b-ad9bdeb44fc5', 
-                                 path: '', url: 'http://13.233.98.12:8888/')], 
-           contextPath: 'helloworld', war: '**/*.war'
+       deploy adapters: [tomcat9(credentialsId: '9ca0a4b5-e19f-426b-aa88-7a5345482f9d', path: '', url: 'http://13.233.98.12:8888')],
+           contextPath: 'hellokondareddy', war: '**/*.war'
             
         }
         }
